@@ -3,6 +3,8 @@ export type IconText = {
     id: string
 }
 
+export type SpecialSkills = [IconText, string[]]
+
 export type Contacts = [IconText, IconText[]]
 
 

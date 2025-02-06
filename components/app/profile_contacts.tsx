@@ -1,4 +1,4 @@
-import { IconText, Contacts } from "../../data/Contacts";
+import { Contacts } from "../../types/ProfileTypes";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
@@ -30,23 +30,28 @@ const contact_exp: Contacts = [
 	]
 ];
 
-export const ProfileContact: React.FC = () => (
-	<div>
+const ProfileContact: React.FC = () => (
+	/* React.Fragment allows you to return multiple elements without introducing additional DOM elements */
+	<>
 		{/* Bar */}
 		<ColorBox icon={contact_exp[0].icon} id={contact_exp[0].id}></ColorBox>
 
 		<div className="p-4">
-			{contact_exp[1].map((e,i) =>(
-				// <IconLabel icon={ht.icon} id={ht.id} />
-				<IconLabel 
-					key={i}
-					theme_font={{fontsize:"text-sm"}} 
-					icon_label={{
-						icon: e.icon,
-						id: e.id
-					}}
-				/>
-			))}
+			{contact_exp[1].map((e,i) =>
+				
+				(
+					<IconLabel 
+						key={e.id}
+						theme_font={{ fontsize: i === 0 ? "text-xs" : "text-sm" }} 
+						icon_label={{
+							icon: e.icon,
+							id: e.id
+						}}
+					/>
+				) 
+			)}
 		</div>
-	</div> 
+	</>
 )
+
+export default ProfileContact;

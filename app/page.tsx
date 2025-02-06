@@ -16,21 +16,5 @@ const CV: React.FC = () => (
 
 export default CV
 
-// export default function f_cv() {
-//   return (
-//     <div className="flex h-screen w-full">
-//       {/* Left Side plane (3/8 of the screen) */}
-//       <aside className="w-[33%] bg-zinc-800 p-6 h-screen overflow-y-auto">
-//         <SidePlane></SidePlane>
-//       </aside>
-
-//       {/* Main Content Area (5/8 of the screen) */}
-//       <main className="w-[67%] bg-gray-100 p-6">
-//         <MainCol></MainCol>
-//       </main>
-//     </div>
-    
-//   );
-// }
 
 
