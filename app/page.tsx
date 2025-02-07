@@ -3,7 +3,7 @@ import { SidePlane, MainCol } from '@/components'
 const CV: React.FC = () => (
   <div className="flex h-screen w-full">
     {/* Left Side plane (3/8 of the screen) */}
-    <aside className="w-[33%] bg-zinc-800 p-6 h-screen overflow-y-auto">
+    <aside className="w-[33%] bg-transparent p-6 h-screen overflow-y-auto z-10">
       <SidePlane/>
     </aside>
 
