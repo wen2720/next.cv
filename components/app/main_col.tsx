@@ -1,7 +1,6 @@
 import React from 'react';
-import TestParticles from './test_particles';
-import EdgeParticles from './edge_particles';
-import Image from "next/image";
+import TestParticles from './particles_test';
+// import EdgeParticles from './edge_particles';
 
 // Define the props type
 interface ColumnSpaceProps {
@@ -16,7 +15,7 @@ const MainCol: React.FC<ColumnSpaceProps> = ({ title = "Default Title", content 
     <div className="flex flex-col bg-gray-200 p-6 m-6 rounded-lg">
       <div className="bg-white p-4 rounded-md shadow-md z-0">
         <TestParticles/>
-        {/* EdgeParticles /> */}
+        {/* <EdgeParticles /> */}
       </div>
       
       <div className="bg-white p-4 rounded-md shadow-md z-10">
