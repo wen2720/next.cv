@@ -2,8 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import Image from "next/image";
 import ProfileContact from './profile_contacts';
-import ProfileSpecials from './special_skills';
-import CodeSkills from './code_skills';
+import ProfileSpecials from './skills_special';
+import CodeSkills from './skills_code';
+import ProfileLanguage from './language_speaking';
 
 // Define the props type
 interface AProfile {
@@ -52,6 +53,7 @@ const OneProfile: React.FC<AProfile> = ({
         <ProfileContact />  
         <ProfileSpecials />
         <CodeSkills />
+        <ProfileLanguage />
       
       </div>
 

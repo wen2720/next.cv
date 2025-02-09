@@ -1,20 +1,5 @@
-import { SidePlane, MainCol } from '@/components'
+import CvPage from "@/components/app/page_cv"
 
-const CV: React.FC = () => (
-  <div className="flex h-screen w-full">
-    {/* Left Side plane (3/8 of the screen) */}
-    <aside className="w-[33%] bg-transparent p-6 h-screen overflow-y-auto z-10">
-      <SidePlane/>
-    </aside>
+const HomePage = () => <CvPage/>
 
-    {/* Main Content Area (5/8 of the screen) */}
-    <main className="w-[67%] bg-gray-100 p-6">
-      <MainCol/>
-    </main>
-  </div>
-)
-
-export default CV
-
-
-
+export default HomePage
