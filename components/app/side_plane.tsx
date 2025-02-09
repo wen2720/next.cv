@@ -33,7 +33,7 @@ const OneProfile: React.FC<AProfile> = ({
         width={128}
         height={128}
         className="rounded-full object-cover"
-        priority={false}
+        priority={true}
       />
     
       {/* Name */}

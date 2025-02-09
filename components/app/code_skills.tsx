@@ -5,7 +5,7 @@ import { SpecialSkills } from "@/types/ProfileTypes";
 const skills_exp: SpecialSkills = [
 	{
 		icon: FaRegFileCode,
-		id: "Specialization"
+		id: "Programming"
 	},
 	["Python", "Elixir", "Dart", "TypeScript", "C#", "F#", "JavaScript", "HTML", "CSS", "Shell Script", "C++", "Java", "C"]
 ]

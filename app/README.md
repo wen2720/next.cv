@@ -42,4 +42,7 @@ npm install next@latest react@latest react-dom@latest
 5. The path ```public``` is for Static assets whereas the pictures in the path can be directly sourced.
 
 
+More about Neext.js can be found through the [link](https://nextjs.org/docs/app/getting-started/installation).
+
+
 

@@ -1,96 +1,89 @@
-
 "use client"
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import type { Container, Engine } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim"; 
 
-const TestParticles:React.FC = () => {
-    const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine);
+const ParticlesBackground = () => {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    // Loads all tsparticles features
+    await loadSlim(engine);
+  }, []);
 
-        await loadSlim(engine);
-    }, []);
-
-    const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
-    }, []);
-
-    return (
-      <Particles
+  return (
+    <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
-          background: {
-              color: {
-                  value: "#0d47a1",
-              },
-          },
-          fpsLimit: 120,
-          interactivity: {
-              events: {
-                  onClick: {
-                      enable: true,
-                      mode: "push",
-                  },
-                  onHover: {
-                      enable: true,
-                      mode: "repulse",
-                  },
-                  resize: true,
-              },
-              modes: {
-                  push: {
-                      quantity: 4,
-                  },
-                  repulse: {
-                      distance: 200,
-                      duration: 0.4,
-                  },
-              },
-          },
-          particles: {
-              color: {
-                  value: "#ffffff",
-              },
-              links: {
-                  color: "#ffffff",
-                  distance: 150,
-                  enable: true,
-                  opacity: 0.5,
-                  width: 1,
-              },
-              move: {
-                  direction: "none",
-                  enable: true,
-                  outModes: {
-                      default: "bounce",
-                  },
-                  random: false,
-                  speed: 6,
-                  straight: false,
-              },
-              number: {
-                  density: {
-                      enable: true,
-                      area: 800,
-                  },
-                  value: 80,
-              },
-              opacity: {
-                  value: 0.5,
-              },
-              shape: {
-                  type: "circle",
-              },
-              size: {
-                  value: { min: 1, max: 5 },
-              },
-          },
-          detectRetina: true,
-      }}
-  />
-    );
+
+			background: {
+				color: "#0d1117", // Dark background
+			},
+			particles: {
+				number: {
+					value: 80, // More particles for better connectivity
+					density: {
+						enable: true,
+						area: 1000, // Spread area
+					},
+				},
+				color: {
+					value: "#00ffcc", // Edge color
+				},
+				shape: {
+					type: "circle", // Circular particles
+				},
+				opacity: {
+					value: 0.7,
+				},
+				size: {
+					value: { min: 2, max: 4 }, // Particle size variation
+				},
+				move: {
+					enable: true,
+					speed: 1.5, // Speed of movement
+					direction: "none",
+					random: false,
+					straight: false,
+					outModes: {
+						default: "bounce",
+					},
+				},
+				links: {
+					enable: true,
+					distance: 150, // Maximum distance between linked particles
+					color: "#00ffcc", // Link color
+					opacity: 0.8,
+					width: 2, // Line thickness
+				},
+			},
+			interactivity: {
+				events: {
+					onHover: {
+						enable: true,
+						mode: "grab", // Grab effect on hover
+					},
+					onClick: {
+						enable: true,
+						mode: "push", // Add more particles on click
+					},
+				},
+				modes: {
+					grab: {
+						distance: 200,
+						line_linked: {
+							opacity: 1,
+						},
+					},
+					push: {
+						quantity: 4,
+					},
+				},
+			},
+			detectRetina: true, // High resolution
+		}}
+    />
+  );
 };
-export default TestParticles
+
+export default ParticlesBackground;
