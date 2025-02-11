@@ -1,16 +1,21 @@
-import { Contacts } from "../../types/ProfileTypes";
+import { IconText } from "@/types/ProfileTypes";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
 import ColorBox from "../color_box";
 import IconLabel from "../icon_label";
 
-const contact_exp: Contacts = [
-	{
+type Contact = {
+		title?: IconText
+		contacts?: IconText[]
+}
+
+const ProfileContact: React.FC<Contact> = ({
+	title = {
 		icon: IoMdInformationCircleOutline, // React component for LinkedIn icon
 		id: "Contact"
 	},
-	[
+	contacts = [
 		{
 			icon: FaLinkedin, // React component for LinkedIn icon
 			id: "linkedin.com/in/profile-wenhao-0727/"
@@ -28,17 +33,14 @@ const contact_exp: Contacts = [
 			id: "53776999"
 		}
 	]
-];
-
-const ProfileContact: React.FC = () => (
+}) => (
 	/* React.Fragment allows you to return multiple elements without introducing additional DOM elements */
 	<>
 		{/* Bar */}
-		<ColorBox icon={contact_exp[0].icon} id={contact_exp[0].id}></ColorBox>
+		<ColorBox icon={title.icon} id={title.id}></ColorBox>
 
 		<div className="p-4">
-			{contact_exp[1].map((e,i) =>
-				
+			{contacts.map((e,i) =>
 				(
 					<IconLabel 
 						key={e.id}

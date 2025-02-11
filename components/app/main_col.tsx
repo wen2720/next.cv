@@ -1,27 +1,20 @@
 import React from 'react';
-import TestParticles from './particles_test';
-// import EdgeParticles from './edge_particles';
+import AboutProfile from './profile_about';
+import clsx from 'clsx';
 
-// Define the props type
-interface ColumnSpaceProps {
-  title?: string;
-  content?: string;
+
+interface CvContent {
+  font_style?: string
+  font_color?: string
 }
 
-
-// Using React.FC to define the component with the props type
-const MainCol: React.FC<ColumnSpaceProps> = ({ title = "Default Title", content = "Default Content" }) => {
+const MainCol: React.FC<CvContent> = ({ 
+  font_style = "font-serif",
+  font_color = "text-white"
+}) => {
   return (
-    <div className="flex flex-col bg-gray-200 p-6 m-6 rounded-lg">
-      <div className="bg-white p-4 rounded-md shadow-md z-0">
-        <TestParticles/>
-        {/* <EdgeParticles /> */}
-      </div>
-      
-      <div className="bg-white p-4 rounded-md shadow-md z-10">
-        <h2 className="text-2xl text-gray-800">{title}</h2>
-        <p className="text-gray-600">{content}</p>
-      </div> 
+    <div className={clsx("flex flex-col p-6 m-6 rounded-lg", font_style, font_color )}>
+      <AboutProfile/>
     </div>
   );
 };
