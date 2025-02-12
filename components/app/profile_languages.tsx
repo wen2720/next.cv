@@ -1,8 +1,6 @@
 import { LiaLanguageSolid } from "react-icons/lia";
-import { IconText, } from "@/types/ProfileTypes";
-import ColorBox from "@/components/color_box";
+import { ColorBox, type IconText } from "@/components/color_box";
 import React from "react";
-
 
 interface LanguageSkills {
 	title?:  IconText,

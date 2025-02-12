@@ -1,9 +1,6 @@
-import { IconText } from "@/types/ProfileTypes";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { IoMdInformationCircleOutline } from "react-icons/io";
-
-import ColorBox from "../color_box";
-import IconLabel from "../icon_label";
+import { ColorBox, type IconText , IconLabel } from "@/components";
 
 type Contact = {
 		title?: IconText
@@ -45,10 +42,7 @@ const ProfileContact: React.FC<Contact> = ({
 					<IconLabel 
 						key={e.id}
 						theme_font={{ fontsize: i === 0 ? "text-xs" : "text-sm" }} 
-						icon_label={{
-							icon: e.icon,
-							id: e.id
-						}}
+						icon_label={{ icon: e.icon, id: e.id }}
 					/>
 				) 
 			)}

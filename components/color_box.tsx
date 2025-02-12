@@ -4,10 +4,16 @@
 	which can be reused easily.
 	It is fully extendable for adding attributes to develop more diverse 
 */
-import { IconText } from "@/types/ProfileTypes";
+
 import IconLabel from "./icon_label";
 
-const ColorBox: React.FC<IconText> = (
+export type IconText = {
+	icon: React.ElementType,
+	id: string
+}
+
+
+export const ColorBox: React.FC<IconText> = (
 	{
 		icon,
 		id
@@ -33,4 +39,3 @@ const ColorBox: React.FC<IconText> = (
 	</>
 )
 
-export default ColorBox;

@@ -1,6 +1,5 @@
 import { FaBook } from "react-icons/fa6";
-import { IconText } from "@/types/ProfileTypes";
-import ColorBox from "@/components/color_box";
+import { ColorBox, type IconText } from "@/components";
 
 interface SpecialSkills {
 	title?: IconText,
