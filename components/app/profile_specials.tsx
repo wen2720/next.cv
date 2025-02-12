@@ -19,7 +19,7 @@ const ProfileSpecials: React.FC<SpecialSkills> = ({
 
 		<div className="p-4 item-center">
 			{skills.map((e,i) =>(
-				<p key={i} className="mt-2 text-xs text-center">{e}</p> 
+				<p key={i} className="mt-2 text-sm text-center">{e}</p> 
 			))}
 		</div>
 	</> 

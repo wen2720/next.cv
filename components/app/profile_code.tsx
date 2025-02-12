@@ -19,10 +19,10 @@ const ProfileCode: React.FC<ProfileCode> = ({
 
 			<div className="p-4 item-center">
 				{skills.map((e) =>(
-					<p key={e} className="mt-2 text-xs text-center">{e}</p> 
+					<p key={e} className="mt-2 text- text-center">{e}</p> 
 				))}
 			</div>
-		
+		sm
     </>
 )
 

@@ -7,8 +7,8 @@ const ProfileAbout: React.FC<PorfileAbout> = ({
 	content = "I\'m looking for a full stack developer position. I've worked as an associated full stack developer for web and mobile applications. I graduated from DTU with MSc in Computer Science engineering."
 }) => (
 	<>
-		<p className="font-bold">{title}</p>
-		<p>{content}</p>
+		<p className="font-bold underline">{title}</p>
+		<p className="text-sm">{content}</p>
 	</>
 )
 export default ProfileAbout;

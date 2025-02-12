@@ -12,7 +12,6 @@ interface LanguageSkills {
 	}[]
 }
 
-
 const ProfileLanguage: React.FC<LanguageSkills> = ({
 	title = {
 		icon: LiaLanguageSolid,

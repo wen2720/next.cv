@@ -4,7 +4,7 @@ import Image from "next/image";
 import ProfileContact from './profile_contacts';
 import ProfileSpecials from './profile_specials';
 import ProfileCode from './profile_code';
-import ProfileLanguage from './language_speaking';
+import ProfileLanguage from './profile_languages';
 
 // Define the props type
 interface CvSide {
@@ -25,7 +25,7 @@ const OneProfile: React.FC<CvSide> = ({
 }) => {
   return (
     // <div className={`flex flex-col items-center mb-6 ${font_style} ${font_color} `}>
-    <div className={clsx("flex flex-col items-center mb-6", font_style, font_color)}>
+    <div className={clsx("flex flex-col items-center m-6", font_style, font_color)}>
       
       {/* Profile image */}
       <Image
@@ -46,8 +46,7 @@ const OneProfile: React.FC<CvSide> = ({
           <p key={i} className="mt-2 text-sm text-left">{ht}</p>  
         ))}
       </div>
-      
-
+    
       <div className="flex flex-col">
         <ProfileContact />  
         <ProfileSpecials />
