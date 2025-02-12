@@ -27,7 +27,7 @@ body {
     width: 8px; /* Adjust width */
   }
   ::-webkit-scrollbar-track {
-    background: #2d2d2d; /* Darker track */
+    background: rgba(128, 128, 128, 0.3); /* Darker track */
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb {

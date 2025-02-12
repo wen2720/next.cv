@@ -1,14 +1,23 @@
 import { LiaLanguageSolid } from "react-icons/lia";
-import { LanguageSkills } from "@/types/ProfileTypes";
+import { IconText, } from "@/types/ProfileTypes";
 import ColorBox from "@/components/color_box";
 import React from "react";
 
-const skills_exp: LanguageSkills = [
-	{
+
+interface LanguageSkills {
+	title?:  IconText,
+	languages?: {
+		language: string
+		level: string
+	}[]
+}
+
+const ProfileLanguage: React.FC<LanguageSkills> = ({
+	title = {
 		icon: LiaLanguageSolid,
 		id: "Language"
 	},
-	[
+	languages = [
 		{
 			language: "Chinese",
 			level: "Native"
@@ -25,16 +34,14 @@ const skills_exp: LanguageSkills = [
 			language: "Danish",
 			level: "Elementary"
 		}
-
+	
 	]
-]
-
-const ProfileLanguage: React.FC = () => (
+}) => (
 	<>
-		<ColorBox icon={skills_exp[0].icon} id={skills_exp[0].id}></ColorBox>
+		<ColorBox icon={title.icon} id={title.id}></ColorBox>
 
 		<div className="grid grid-cols-2 gap-4 p-4">
-			{skills_exp[1].map((e,i) =>(
+			{languages.map((e,i) =>(
 				<React.Fragment key={i}>
 					<p>{e.language}</p>
 					<p>{e.level}</p>

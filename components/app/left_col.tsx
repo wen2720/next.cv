@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import Image from "next/image";
 import ProfileContact from './profile_contacts';
-import ProfileSpecials from './skills_special';
-import CodeSkills from './skills_code';
-import ProfileLanguage from './language_speaking';
+import ProfileSpecials from './profile_specials';
+import ProfileCode from './profile_code';
+import ProfileLanguage from './profile_languages';
 
 // Define the props type
-interface AProfile {
+interface CvSide {
   img_src?: string;
   name?: string;
   hash_tags?: string[];
@@ -16,7 +16,7 @@ interface AProfile {
 }
 
 // React component
-const OneProfile: React.FC<AProfile> = ({ 
+const OneProfile: React.FC<CvSide> = ({ 
   img_src="/IMG5866-modified1.png", 
   name = "Wenhao Li", 
   hash_tags = ["#Computer Science", "#Software Engineer", "#Full-stack developer"],
@@ -25,7 +25,7 @@ const OneProfile: React.FC<AProfile> = ({
 }) => {
   return (
     // <div className={`flex flex-col items-center mb-6 ${font_style} ${font_color} `}>
-    <div className={clsx("flex flex-col items-center mb-6", font_style, font_color)}>
+    <div className={clsx("flex flex-col items-center m-6", font_style, font_color)}>
       
       {/* Profile image */}
       <Image
@@ -46,15 +46,12 @@ const OneProfile: React.FC<AProfile> = ({
           <p key={i} className="mt-2 text-sm text-left">{ht}</p>  
         ))}
       </div>
-      
-
+    
       <div className="flex flex-col">
-      
         <ProfileContact />  
         <ProfileSpecials />
-        <CodeSkills />
+        <ProfileCode />
         <ProfileLanguage />
-      
       </div>
 
     </div>

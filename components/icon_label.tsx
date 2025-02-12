@@ -23,7 +23,7 @@ const IconLabel: React.FC<ALabel> = ({
 
 		{/* Label: Takes the remaining 2/5 of the space */}
 		<div className="w-2/5 pl-4">
-			<span className={`text-lg ${bold} ${fontsize} text-white`}>{id}</span>
+			<p className={`text-lg ${bold} ${fontsize} text-white`}>{id}</p>
 		</div>
 	</div>
 )
