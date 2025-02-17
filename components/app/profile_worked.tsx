@@ -1,47 +1,83 @@
 import { ColorBox, EventBox, type WorkExp } from "@/components";
 import { IoBagRemoveSharp } from "react-icons/io5";
-import { start } from "repl";
 
 interface PorfileWorked{
 	title?: string
 	events?: WorkExp[]
 }
 
+
 const ProfileWorked: React.FC<PorfileWorked> = ({
 	title = "Working Experiences",
 	events = [
-		{ date: "2024-02-01", title: "Event 1", frameworks: "This is the first event." },
-		{ date: "2024-02-05", title: "Event 2", frameworks: "This is the second event." },
-		{ date: "2024-02-10", title: "Event 3", frameworks: "This is the third event." }
+		{ date: "October-2022 ~ July-2024 in Sinolab ApS", title: "Full-stack developer", 
+			projects:
+			[
+				{
+					name: "dangdi web app",
+					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
+				},
+				{
+					name: "dangdi mobile app",
+					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
+				},
+				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
+				// "Flutter FlutterFlow"
+			]
+		},
+		{ date: "October-2022 ~ October-2022 in Sinolab ApS", title: "Full-stack developer", 
+			projects: 
+			[
+				{
+					name: "dangdi web app",
+					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
+				},
+				{
+					name: "dangdi mobile app",
+					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
+				},
+				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
+			]
+			// "Flutter FlutterFlow"
+		},
 	]
-
 }) =>{
-	let es = events.slice(0,-1)
-	let e = events[events.length-1]
-	return (
-	<>
-		<ColorBox icon={IoBagRemoveSharp} id={title} />
-
-		<div className="relative mt-4">
-			{/* Vertical Line */}
-			<div className="absolute top-0 left-[0.825em] -bottom-10 w-0.5 bg-[#888]"></div>
-			{
-			es.map((event, index) => (
-				<div key={index} className="relative flex items-start gap-6">
-					{/* Dot Indicator */}
-					{/* <div className="top-0 left-[6px] w-4 h-4 bg-white rounded-full border-4 border-black relative "></div> */}
-
-					{/* Event Content */}
-					<EventBox date={event.date} title={event.title} frameworks={event.frameworks} start={false} />
+	if (events === null) {
+		return (
+			<></>
+		)
+	} else {
+		let show_events = events.length > 1
+		let first_event = events[events.length-1]
+		return (
+			<>
+				<ColorBox icon={IoBagRemoveSharp} id={title} />
+	
+				<div className="relative mt-4">
+					{/* Vertical Line */}
+					{
+						show_events &&
+						<div className="absolute top-0 -bottom-10 w-0.5 bg-[#888]"></div>
+						
+					}
+					
+					{
+						show_events &&
+						events.slice(0,-1).map((event, index) => (
+							<div key={"working experiece" + index} className="relative flex items-start gap-6">
+								<EventBox date={event.date} title={event.title} start={false} projects={event.projects} />
+							</div>
+						))
+					}
+					</div>	
+					
+				<div key={events[events.length-1].title + events[events.length-1].date} className="relative flex items-start gap-6 mb-8">
+					<EventBox date={first_event.date} title={first_event.title} projects={first_event.projects} start={true} />
 				</div>
-			))}
-		</div>
-		
-		<div key={e.title + e.date} className="relative flex items-start gap-6 mb-8">
-		<EventBox date={e.date} title={e.title} frameworks={e.frameworks} start={true} />
-		</div>
-  </>
-	)
+			</>
+		)
+	}
+
 }
 
 export default ProfileWorked
