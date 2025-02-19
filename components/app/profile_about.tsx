@@ -4,7 +4,7 @@ interface PorfileAbout {
 }
 const ProfileAbout: React.FC<PorfileAbout> = ({
 	title = "About",
-	content = "I\'m looking for a full stack developer position. I've worked as an associated full stack developer for web and mobile applications. I graduated from DTU with MSc in Computer Science engineering."
+	content = "I\'m looking for a full stack developer role. I've worked as an associated full stack developer for developing web and mobile applications."
 }) => (
 	<>
 		<p className="font-bold underline">{title}</p>

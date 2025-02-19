@@ -39,8 +39,8 @@ const ProfileLanguage: React.FC<LanguageSkills> = ({
 		<ColorBox icon={title.icon} id={title.id}></ColorBox>
 
 		<div className="grid grid-cols-2 gap-4 p-4">
-			{languages.map((e,i) =>(
-				<React.Fragment key={i}>
+			{languages.map((e) =>(
+				<React.Fragment key={e.language}>
 					<p>{e.language}</p>
 					<p>{e.level}</p>
 				</React.Fragment>

@@ -42,10 +42,11 @@ const OneProfile: React.FC<CvSide> = ({
       
       {/* Hash tags */}
       <div>
-        {hash_tags.map((ht,i) =>(
-          <p key={i} className="mt-2 text-sm text-left">{ht}</p>  
-        ))}
+      {hash_tags.map((ht) =>(
+        <p key={ht} className="mt-2 text-sm text-left">{ht}</p>  
+      ))}
       </div>
+      
     
       <div className="flex flex-col">
         <ProfileContact />  
