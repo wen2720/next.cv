@@ -9,7 +9,9 @@ import IconLabel from "./icon_label";
 
 export type IconText = {
 	icon: React.ElementType,
-	id: string
+	id: string,
+	link?: string
+
 }
 
 
@@ -29,11 +31,8 @@ export const ColorBox: React.FC<IconText> = (
 
 			{/* bar */}
 			<IconLabel 
-					theme_font={{bold: "font-semibold"}} 
-					icon_label={{
-						icon: icon,
-						id: id
-					}}
+					theme_font={{ bold: "font-semibold"}} 
+					icon_label={{ icon: icon, id: id }}
 				/>
 		</div>
 	</>

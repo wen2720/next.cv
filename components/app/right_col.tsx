@@ -17,8 +17,8 @@ const MainCol: React.FC<CvContent> = ({
   return (
     <div className={clsx("flex-col p-6 m-6 rounded-lg", font_style, font_color )}>
       <AboutProfile/>
-      <ProfileWorked/>
       <ProfileEducation/>
+      <ProfileWorked/>
     </div>
   );
 };

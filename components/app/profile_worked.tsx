@@ -14,32 +14,51 @@ const ProfileWorked: React.FC<PorfileWorked> = ({
 			projects:
 			[
 				{
-					name: "dangdi web app",
-					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
+					project: "Dangdi web app",
+					frameworks: "Vue.js, Docker, Sails.js, MySql, Docker, CI/CD and AWS"
 				},
 				{
-					name: "dangdi mobile app",
-					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
+					project: "Dangdi mobile app",
+					frameworks: "Flutter, FlutterFlow, Docker, CI/CD, and App store Connect, Google Play Console"
 				},
-				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
-				// "Flutter FlutterFlow"
 			]
 		},
-		{ date: "October-2022 ~ October-2022 in Sinolab ApS", title: "Full-stack developer", 
+		{ date: "July-2022 ~ June-2022 in make!mpact ApS", title: "Back-end development internship", 
 			projects: 
 			[
 				{
-					name: "dangdi web app",
-					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
+					project: "Stock trading API",
+					frameworks: "Node.js, Firebase and Google Cloud"
 				},
-				{
-					name: "dangdi mobile app",
-					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
-				},
-				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
 			]
-			// "Flutter FlutterFlow"
 		},
+		{ date: "Feburary-2018 ~ May-2019 in make!mpact ApS", title: "DTU Teaching Assistant", 
+			projects: 
+			[
+				{
+					project: "System Integaration",
+					frameworks: "UML, Agile and Scurm "
+				},
+			]
+		},
+		{ date: "January-2016 ~ June-2016 in Merus Audio", title: "DTU Bachelor Thesis", 
+			projects: 
+			[
+				{
+					project: "FPGA Scan Test",
+					frameworks: "VHDL and FPGA "
+				},
+			]
+		},
+		{ date: "January-2013 ~ June-2013 in Neusoft", title: "Android app testing internship", 
+			projects: 
+			[
+				{
+					project: "Online library",
+					frameworks: "Java and Android"
+				},
+			]
+		}
 	]
 }) =>{
 	if (events === null) {
@@ -64,14 +83,14 @@ const ProfileWorked: React.FC<PorfileWorked> = ({
 					{
 						show_events &&
 						events.slice(0,-1).map((event, index) => (
-							<div key={"working experiece" + index} className="relative flex items-start gap-6">
+							<div key={event.date} className="relative flex items-start gap-6">
 								<EventBox date={event.date} title={event.title} start={false} projects={event.projects} />
 							</div>
 						))
 					}
 					</div>	
 					
-				<div key={events[events.length-1].title + events[events.length-1].date} className="relative flex items-start gap-6 mb-8">
+				<div key={events[events.length-1].date} className="relative flex items-start gap-6 mb-8">
 					<EventBox date={first_event.date} title={first_event.title} projects={first_event.projects} start={true} />
 				</div>
 			</>

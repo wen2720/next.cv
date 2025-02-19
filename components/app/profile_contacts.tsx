@@ -15,11 +15,13 @@ const ProfileContact: React.FC<Contact> = ({
 	contacts = [
 		{
 			icon: FaLinkedin, // React component for LinkedIn icon
-			id: "linkedin.com/in/profile-wenhao-0727/"
+			id: "linkedin.com/in/profile-wenhao-0727/",
+			link: "https://linkedin.com/in/profile-wenhao-0727/"
 		},
 		{
 			icon: FaGithub, // React component for GitHub icon
-			id: "github.com/wen2720"
+			id: "github.com/wen2720",
+			link: "https://github.com/wen2720/"
 		},
 		{
 			icon: FaEnvelope, // React component for Email icon
@@ -34,7 +36,7 @@ const ProfileContact: React.FC<Contact> = ({
 	/* React.Fragment allows you to return multiple elements without introducing additional DOM elements */
 	<>
 		{/* Bar */}
-		<ColorBox icon={title.icon} id={title.id}></ColorBox>
+		<ColorBox icon={title.icon} id={title.id} />
 
 		<div className="p-4">
 			{contacts.map((e,i) =>
@@ -42,7 +44,7 @@ const ProfileContact: React.FC<Contact> = ({
 					<IconLabel 
 						key={e.id}
 						theme_font={{ fontsize: i === 0 ? "text-xs" : "text-sm" }} 
-						icon_label={{ icon: e.icon, id: e.id }}
+						icon_label={{ icon: e.icon, id: e.id, link:e.link }}
 					/>
 				) 
 			)}

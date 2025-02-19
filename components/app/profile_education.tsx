@@ -10,35 +10,47 @@ interface PorfileWorked{
 const ProfileEducation: React.FC<PorfileWorked> = ({
 	title = "Educations",
 	events = [
-		{ date: "October-2022 ~ July-2024 in Sinolab ApS", title: "Full-stack developer", 
+		{ 
+			date: "September-2024 ~ January in DTU", title: "Single Course", 
 			projects:
 			[
 				{
-					name: "dangdi web app",
-					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
+					project: "",
+					courses: "Deep learning and MLOps",
+					models: "FFNN, CNN, GNN, MPNN and PaiNN",
+					frameworks: "Python, pytorch, HPC and Google Cloud"
 				},
-				{
-					name: "dangdi mobile app",
-					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
-				},
-				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
-				// "Flutter FlutterFlow"
 			]
 		},
-		{ date: "October-2022 ~ October-2022 in Sinolab ApS", title: "Full-stack developer", 
+		{ 
+			date: "January-2022 in DTU", title: "MSc in Computer Science Engineering", 
+			projects:
+			[
+				{
+					project: "",
+					frameworks: ""
+				},
+			]
+		},
+		{ 
+			date: "June-2021 in DTU", title: "Master thesis", 
 			projects: 
 			[
 				{
-					name: "dangdi web app",
-					frameworks: "Vue.js, Docker, Sails.js, MySql, AWS"
-				},
-				{
-					name: "dangdi mobile app",
-					frameworks: "Flutter, FlutterFlow, Docker, App store Connect, Google Play Console"
-				},
-				//"Flutter", "FlutterFlow", "Docker", "App store Connect", "Google Play Console"
+					project: "Formal modeling and analysis of an eHealth Protocol",
+					frameworks: "(\u03B1,\u03B2)-privacy, context-free grammar and first-order logic"
+				},	
 			]
-			// "Flutter FlutterFlow"
+		},
+		{ 
+			date: "June-2016 in DTU", title: "Bachelor Eletrical Engineering ", 
+			projects:
+			[
+				{
+					project: "",
+					frameworks: ""
+				},
+			]
 		},
 	]
 }) =>{
@@ -63,15 +75,15 @@ const ProfileEducation: React.FC<PorfileWorked> = ({
 					
 					{
 						show_events &&
-						events.slice(0,-1).map((event, index) => (
-							<div key={"working experiece" + index} className="relative flex items-start gap-6">
+						events.slice(0,-1).map((event) => (
+							<div key={event.date} className="relative flex items-start gap-6">
 								<EventBox date={event.date} title={event.title} start={false} projects={event.projects} />
 							</div>
 						))
 					}
 				</div>	
 					
-				<div key={events[events.length-1].title + events[events.length-1].date} className="relative flex items-start gap-6 mb-8">
+				<div key={events[events.length-1].date} className="relative flex items-start gap-6 mb-8">
 					<EventBox date={first_event.date} title={first_event.title} projects={first_event.projects} start={true} />
 				</div>
 			</>
