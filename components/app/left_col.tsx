@@ -5,6 +5,7 @@ import ProfileContact from './profile_contacts';
 import ProfileSpecials from './profile_specials';
 import ProfileCode from './profile_code';
 import ProfileLanguage from './profile_languages';
+import profile_image from '@/public/IMG5866-modified1.png'
 
 // Define the props type
 interface CvSide {
@@ -16,8 +17,8 @@ interface CvSide {
 }
 
 // React component
-const OneProfile: React.FC<CvSide> = ({ 
-  img_src="/IMG5866-modified1.png", 
+const LeftColumn: React.FC<CvSide> = ({ 
+  img_src=profile_image, 
   name = "Wenhao Li", 
   hash_tags = ["#Computer Science", "#Software Engineer", "#Full-stack developer"],
   font_style = "font-serif",
@@ -59,4 +60,4 @@ const OneProfile: React.FC<CvSide> = ({
   );
 };
 
-export default OneProfile;
+export default LeftColumn;

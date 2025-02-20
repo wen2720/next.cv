@@ -17,8 +17,9 @@ const ProfileEducation: React.FC<PorfileWorked> = ({
 				{
 					project: "",
 					courses: "Deep learning and MLOps",
+					GPA: "10",
 					models: "FFNN, CNN, GNN, MPNN and PaiNN",
-					frameworks: "Python, pytorch, HPC and Google Cloud"
+					frameworks: "Python, Pytorch, HPC and Google Cloud"
 				},
 			]
 		},
@@ -28,7 +29,8 @@ const ProfileEducation: React.FC<PorfileWorked> = ({
 			[
 				{
 					project: "",
-					frameworks: ""
+					frameworks: "",
+					GPA: "7.12"
 				},
 			]
 		},
@@ -48,7 +50,8 @@ const ProfileEducation: React.FC<PorfileWorked> = ({
 			[
 				{
 					project: "",
-					frameworks: ""
+					frameworks: "",
+					GPA: "7.82" 
 				},
 			]
 		},
@@ -59,8 +62,8 @@ const ProfileEducation: React.FC<PorfileWorked> = ({
 			<></>
 		)
 	} else {
-		let show_events = events.length > 1
-		let first_event = events[events.length-1]
+		const show_events = events.length > 1
+		const first_event = events[events.length-1]
 		return (
 			<>
 				<ColorBox icon={FaSchool} id={title} />
