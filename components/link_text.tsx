@@ -1,11 +1,10 @@
 interface TextLink{ 
   id: string
-  className?: string
   link?: string
 }
 
 const LinkText:React.FC<TextLink> = (
-  {id, className, link}
+  {id, link}
 ) => (
   <>  
       {
