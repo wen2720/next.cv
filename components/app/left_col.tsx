@@ -20,7 +20,7 @@ interface CvSide {
 const LeftColumn: React.FC<CvSide> = ({ 
   img_src=profile_image, 
   name = "Wenhao Li", 
-  hash_tags = ["#Computer Science", "#Software Engineer", "#Full-stack developer"],
+  hash_tags = ["#Software Engineer", "#Full-stack developer", "#MSc in Computer Science"],
   font_style = "font-serif",
   font_color = "text-white"
 }) => {
