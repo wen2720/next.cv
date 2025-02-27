@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --swiper-navigation-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,8 +21,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* Add this in global.css */
 @layer utilities {
   ::-webkit-scrollbar {
     width: 8px; /* Adjust width */
